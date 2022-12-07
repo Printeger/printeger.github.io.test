@@ -26,13 +26,13 @@
  
  ![](pic/2022-03-29-09-31-36.png)
 
-https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/2022-03-29-09-31-36.png
+![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/2022-03-29-09-31-36.png)
 
  ## 3D shape classification
 
 ![](pic/2022-03-29-09-33-41.png)
 
-https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/2022-03-29-09-33-41.png
+![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/2022-03-29-09-33-41.png)
 
 PointNet
 
@@ -41,7 +41,7 @@ PointNet
 ##  3D object detection and tracking
 
 ![](pic/2022-03-29-09-34-31.png)
-https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/2022-03-29-09-34-31.png
+![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/2022-03-29-09-34-31.png)
 ### 1. Region Proposal-based : 提出几个可能的包含对象的区域，然后提取区域特征以确定每个提议的类别标签。
         
 #### multi-view based: 慢
@@ -55,7 +55,7 @@ https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/2022-03-29-
 - leverage existing 2D object detectors to generate 2D candidate regions of objects and then extract a 3D frustum proposal for each 2D candidate region. 受到 2D object detectors的限制。
 
 ![](pic/2022-03-29-10-17-47.png)
-https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/2022-03-29-10-17-47.png
+![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/2022-03-29-10-17-47.png)
 
 
 ### 2. Single Shot Methods : 
@@ -73,7 +73,7 @@ https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/2022-03-29-
 
 ## 3D point cloud segmentation
 ![](pic/2022-03-29-09-35-30.png)
-https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/2022-03-29-09-35-30.png
+![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/2022-03-29-09-35-30.png)
 
 --------------------------------------------------------------------
 ## Grid-GCNN
@@ -82,22 +82,22 @@ https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/2022-03-29-
 ## LDG CNN
 
 ![](pic/2022-04-06-18-06-08.png)
-https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/2022-04-06-18-06-08.png
+![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/2022-04-06-18-06-08.png)
 ![](pic/2022-04-06-18-03-40.png)
-https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/2022-04-06-18-03-40.png
+![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/2022-04-06-18-03-40.png)
 ## PointWeb
 - detection
 - acc not good
 
 ![](pic/2022-04-07-15-07-31.png)
-https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/2022-04-07-15-07-31.png
+![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/2022-04-07-15-07-31.png)
 ![](pic/2022-04-07-15-15-00.png)
-https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/2022-04-07-15-15-00.png
+![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/2022-04-07-15-15-00.png)
 ## pointconv
 1000 points<9.9ms
 
 ![](pic/2022-04-18-13-25-04.png)
-https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/2022-04-18-13-25-04.png
+![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/2022-04-18-13-25-04.png)
 ## PAConv
 batch size = 16 
 0.118s / batch
@@ -105,5 +105,5 @@ batch size = 16
 acc : 0.935981
 
 ![](pic/2022-04-19-14-46-48.png)
-https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/2022-04-19-14-46-48.png
+![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/2022-04-19-14-46-48.png)
 ## PointView-GCN

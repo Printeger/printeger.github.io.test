@@ -4,13 +4,13 @@ layout: feed
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-    <title>Hank Quinlan's Blog</title>
-    <link href="http://printeger.github.io/blog/atom.xml" rel="self"/>
-    <link href="http://printeger.github.io/blog"/>
+    <title>printeger's Blog</title>
+    <link href="http://printeger.github.io/blob/atom.xml" rel="self"/>
+    <link href="http://printeger.github.io/blob"/>
     <updated>{{ site.time | date_to_xmlschema }}</updated>
-    <id>http://printeger.github.io/blog</id>
+    <id>http://printeger.github.io/blob</id>
     <author>
-        <name>Hank Quinlan</name>
+        <name>printeger</name>
         <email>printeger@outlook.com</email>
     </author>
 

@@ -1,7 +1,7 @@
 - [3D Point Cloud](#3d-point-cloud)
   - [3D shape classification](#3d-shape-classification)
   - [3D object detection and tracking](#3d-object-detection-and-tracking)
-    - [1. Region Proposal-based : 提出几个可能的包含对象的区域，然后提取区域特征以确定每个提议的类别标签。](#1-region-proposal-based--提出几个可能的包含对象的区域然后提取区域特征以确定每个提议的类别标签)
+    - [1. Region Proposal-based :](#1-region-proposal-based-)
       - [multi-view based: 慢](#multi-view-based-慢)
       - [segmentation-based：STD（F）/PointPainting/PointRGCN](#segmentation-basedstdfpointpaintingpointrgcn)
       - [frustum-based : F-ConvNet](#frustum-based--f-convnet)
@@ -42,7 +42,8 @@ PointNet
 
 ![](pic/2022-03-29-09-34-31.png)
 ![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/2022-03-29-09-34-31.png)
-### 1. Region Proposal-based : 提出几个可能的包含对象的区域，然后提取区域特征以确定每个提议的类别标签。
+### 1. Region Proposal-based : 
+- 提出几个可能的包含对象的区域，然后提取区域特征以确定每个提议的类别标签。
         
 #### multi-view based: 慢
 - 从 BEV 图生成一组高度准确的 3D 候选框，并将它们投影到多个视图的特征图（例如，LiDAR 前视图图像、RGB 图像）。然后他们结合来自不同视图的这些区域特征来预测定向的 3D 边界框.  

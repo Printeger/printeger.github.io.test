@@ -1,5 +1,11 @@
-- [1. Extrinsic Matrix](#1-extrinsic-matrix)
+- [1. Usage](#1-usage)
+  - [1.1 Data Collect Procedure](#11-data-collect-procedure)
+  - [1.2 Precision Indicators](#12-precision-indicators)
+    - [1.2.1 RPE: relative pose error](#121-rpe-relative-pose-error)
+    - [1.2.2 ATE: absolute trajectory error](#122-ate-absolute-trajectory-error)
+  - [1.3 in \& out](#13-in--out)
 - [2. Calibration Result](#2-calibration-result)
+  - [2.0 Extrinsic Matrix](#20-extrinsic-matrix)
   - [2.1 Calib Data:(0655)](#21-calib-data0655)
     - [2.1.1 Traj](#211-traj)
     - [2.1.2 XYZ](#212-xyz)
@@ -44,17 +50,86 @@
     - [2.7.5 RPE](#275-rpe)
 
 
+# 1. Usage
+## 1.1 Data Collect Procedure
 
-# 1. Extrinsic Matrix
+More than three motions in different positions and orientations are required, so that the equation is full rank and can be solved linearly.
+
+- [x] Therefore, the algorithm requires the trajectory needs to contain translations and rotations(like vehicle to travel in the shape of figure 8, as shown in Figure down below). 
+
+- [x] The point cloud and GNSS+INS data of the trajectory need to be recorded simultaneously.
+
+- [x] There should be rich features in the experimental environment, like buildings, and less moving objects, like moving vehicle, which will affect the result of Lidar odometry.
+
+- [x] Do not test in an environment surrounded by tall buildings, this will affect the accuracy of GNSS.
+
+- [x] Could record more than one sets of data for verification if necessary. 
+
+![](pic/5/4.png)
+![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/5/4.png)
+
+## 1.2 Precision Indicators
+> estimate pose: 
+> 
+>![](pic/5/17.png)
+>![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/5/17.png)
+
+> reference pose:
+>
+> ![](pic/5/18.png)
+> ![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/5/18.png)
+
+### 1.2.1 RPE: relative pose error
+> i frame RPE:
+> 
+> ![](pic/5/19.png)
+> ![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/5/19.png)
+
+![](pic/5/20.png)
+![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/5/20.png)
+
+### 1.2.2 ATE: absolute trajectory error
+
+![](pic/5/21.png)
+![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/5/21.png)
+
+![](pic/5/22.png)
+![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/5/22.png)
+
+![](pic/5/23.png)
+![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/5/23.png)
+
+## 1.3 in & out
+
+Input:
+
+```
+// PointCloud
+pcl::PointCloud<pointXYZ> point_in;
+// IMU pose
+std::vector<Eigen::Matrix4d> IMU_pose;
+// PointCloud timestamps
+std::vector<double> timestamps;
+```
+Output:
+
+```
+//Extrinsic Matrix: 
+Eigen::Matrix4d calibratedTransformation;
+/*
+|  R T  |
+|_ 0 1 _|
+*/
+```
+
+# 2. Calibration Result
+## 2.0 Extrinsic Matrix
 ```
 [[0.9996387536200673, -0.01085860442221318, 0.02458562529040346, -1.697536587497878],
 [-0.01096721316998588, -0.9999306683289505, 0.004287046827647254, -0.007142523421813133],
 [0.02453736938227735, -0.004555133940977415, -0.99968853562426, -1.502642065472676],
 [0, 0, 0, 1]]
 ```
-
-# 2. Calibration Result
-
 ## 2.1 Calib Data:(0655) 
 ### 2.1.1 Traj
 ![](pic/6/1.png)

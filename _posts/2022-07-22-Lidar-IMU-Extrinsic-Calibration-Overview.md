@@ -1,17 +1,17 @@
-- [1 Overall Structure](#1-overall-structure)
-- [2 Hand-Eye Caliration Method](#2-hand-eye-caliration-method)
-- [3 Solve AX = XB](#3-solve-ax--xb)
-- [4 Dual Quaternion](#4-dual-quaternion)
+- [1. Overall Structure](#1-overall-structure)
+- [2. Hand-Eye Caliration Method](#2-hand-eye-caliration-method)
+- [3. Solve AX = XB](#3-solve-ax--xb)
+- [4. Dual Quaternion](#4-dual-quaternion)
 - [5. Related Page](#5-related-page)
 
 
 
-# 1 Overall Structure
+# 1. Overall Structure
 
 ![](pic/5/1.png)
 ![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/5/1.png)
 
-# 2 Hand-Eye Caliration Method
+# 2. Hand-Eye Caliration Method
 
 ![](pic/5/5.png)
 ![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/5/5.png)
@@ -28,7 +28,7 @@
 >
 > Lidar_pose = Extrinsic * IMU_pose * Extrinsic.inverse()
 
-# 3 Solve AX = XB
+# 3. Solve AX = XB
 
 The function performs the Hand-Eye calibration using various methods. 
 
@@ -52,7 +52,7 @@ The function performs the Hand-Eye calibration using various methods.
 
 In this program, we use K. Daniilidis's Dual Quaternions method to solve AX=XB problem.
 
-# 4 Dual Quaternion
+# 4. Dual Quaternion
 - dual number: 
 
 ![](pic/5/6.png)

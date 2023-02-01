@@ -1,4 +1,15 @@
-
+- [1. Calibration Method](#1-calibration-method)
+  - [1.1 Overall Structure](#11-overall-structure)
+  - [1.2 Hand-Eye Caliration](#12-hand-eye-caliration)
+  - [1.3 Solve AX = XB](#13-solve-ax--xb)
+  - [1.4 Dual Quaternion](#14-dual-quaternion)
+- [2. Usage](#2-usage)
+  - [2.1 Data Collect Procedure](#21-data-collect-procedure)
+  - [2.2 Precision Indicators](#22-precision-indicators)
+    - [2.2.1 RPE: relative pose error](#221-rpe-relative-pose-error)
+    - [2.2.2 ATE: absolute trajectory error](#222-ate-absolute-trajectory-error)
+  - [2.3 in \& out](#23-in--out)
+- [3. Related Page](#3-related-page)
 
 
 # 1. Calibration Method

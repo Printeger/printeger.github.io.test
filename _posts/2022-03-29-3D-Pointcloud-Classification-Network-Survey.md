@@ -2,7 +2,7 @@
 title: 3D Pointcloud Classification Network Survey
 author: printeger
 date: 2022-03-29 12:00:00 +0800
-categories: [Classification]
+categories: [Project, Classification]
 tags: [LiDAR, DeepLearning, Classification, DeepLearning, Overview]
 math: true
 mermaid: true

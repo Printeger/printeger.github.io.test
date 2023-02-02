@@ -2,7 +2,7 @@
 title: Lidar IMU Extrinsic Calibration Experiment
 author: printeger
 date: 2022-08-14 12:00:00 +0800
-categories: [Calibration]
+categories: [Project, Calibration]
 tags: [LiDAR, IMU, Sensor, Calibration, Experiment, SLAM]
 math: true
 mermaid: true

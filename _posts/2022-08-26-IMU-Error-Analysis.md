@@ -1,8 +1,8 @@
 ---
 title: IMU Error Analysis
 author: printeger
-date: 2022-08-26 11:33:00 +0800
-categories: [Sensor]
+date: 2022-08-26 12:00:00 +0800
+categories: [Project, Sensor]
 tags: [IMU, Sensor]
 math: true
 mermaid: true

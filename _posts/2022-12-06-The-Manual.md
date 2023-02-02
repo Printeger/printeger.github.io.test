@@ -1,9 +1,9 @@
 ---
 title: The Manual
 author: printeger
-date: 2022-12-06 11:33:00 +0800
-categories: [Manual]
-tags: [Manual]
+date: 2022-12-06 12:00:00 +0800
+categories: [Lookup]
+tags: [Dict]
 math: true
 mermaid: true
 # image:

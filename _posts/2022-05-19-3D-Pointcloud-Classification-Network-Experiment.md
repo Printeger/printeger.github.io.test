@@ -2,7 +2,7 @@
 title: 3D Pointcloud Classification Network Experiment
 author: printeger
 date: 2022-05-19 12:00:00 +0800
-categories: [Classification]
+categories: [Project, Classification]
 tags: [LiDAR, DeepLearning, Classification, DeepLearning, Experiment]
 math: true
 mermaid: true

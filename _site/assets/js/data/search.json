@@ -1,0 +1,140 @@
+[
+  
+  {
+    "title": "The Manual",
+    "url": "/posts/The-Manual/",
+    "categories": "",
+    "tags": "",
+    "date": "2022-12-06 00:00:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "  A          APOLLO                  play .record          channle 监控          sdk/repo download          启动数据集          点云录制          orders                      B  C          CUDA                ...",
+    "content": "  A          APOLLO                  play .record          channle 监控          sdk/repo download          启动数据集          点云录制          orders                      B  C          CUDA                  pytorch 对应 cuda版本          CUDA          cudnn .tar  install                      D          Docker                  docker 可视化          Cannot access GPU from within container. Please install latest Docker and NVIDIA Container Toolkit as described by:          报错Failed to connect. Is Docker running          docker  container 查看/启动/进入          docker group          docker images / container          docker 拷贝本地文件到容器/容器到本地文件                      E          ERROR      EVO        F  G          GDB      GIT                  从bitbucket下载：                      H  I          INNOVUSION                  falcon-ros:                      J  K  L  M  N  O  P          python        Q  R          ROS                  fixed frame trans          Rosbag to pcd/txt:          查看frame_id                      S  T          torch        U  V  W  X  Y  ZAAPOLLOplay .recordcyber_recorder play -f sensor_rgb.record -loop cyber_visualizer  ### channle 监控cyber_monitor -c ChannelNamesdk/repo downloadcd omnisense &amp;&amp; ./tools/build.bash init all启动数据集\tsource /apollo/cyber/setup.bash \t1 改launch/conf/driver_01_debug.pb.txt    --------------------data route\t2 改launch/dag/driver_single_debug.dag   -------------------config_file_path\t3 改launch/intergration_single_lidar_debug.launch  ------------master    .dag_path\t4 cyber_launch start modules/omnisense/launch/integration_single_lidar_debug.launch\t5 http://viewer.innovusion.info/v60/?url=127.0.0.1&amp;port=8003/stream&amp;autoplay=1.0点云录制\t1. get_pcd/01.get_pcd.pb.txt   ----------channel1: dynamic_points  ----- channel2: static_points     channel3: -----enable_channel1_get_pcd:true\t2. .dag修改路径 ### ordersroot@in-dev-docker:/apollo# ./apollo.sh build_opt omnisense cyberroot@in-dev-docker:/apollo/modules/omnisense# git branch      master    root@in-dev-docker:/apollo/modules/omnisense# git checkout devBranch ‘dev’ set up to track remote branch ‘dev’ from ‘origin’.Switched to a new branch ‘dev’root@in-dev-docker:/apollo/modules/omnisense# cd -/apollo    root@in-dev-docker:/apollo# ./modules/omnisense/tools/build.bash build all    xng@xng:~/CODE/OmniSense2.0/apollo$ ./docker/scripts/dev_into.sh  BCCUDApytorch 对应 cuda版本import torchprint(torch.version.cuda)CUDAexport PATH=/usr/local/cuda/bin:$PATHexport LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATHcudnn .tar  installsudo cp cudnn-*-archive/include/cudnn*.h /usr/local/cuda/include sudo cp -P cudnn-*-archive/lib/libcudnn* /usr/local/cuda/lib64 sudo chmod a+r /usr/local/cuda/include/cudnn*.h /usr/local/cuda/lib64/libcudnn* # D ## Docker ### docker 可视化// RVIZ cannot displaydocker run --add-host=demo:172.16.115.75 -it --name osrf_melodic_full --net host --add-host $(hostname):127.0.0.1 --gpus all -v /tmp/.x11-unix:/tmp/.x11-unix -e DISPLAY=unix$DISPLAY -e GDK_SCALE -e GDK_DPI_SCALE -v /home/xng/CODE/osrf_melodic_full/:/home osrf/ros:melodic-desktop-full /bin/bashdocker run –name ContainerName –gpus all –network host –env=DISPLAY –env=NVIDIA_DRIVER_CAPABILITIES=all -env=NVIDIA-VISIBLE_DEVICES=all –env=QT_X11_NO_MITSHM=1 -v /tmp/.X11-unix:/tmp/.X11-unix:rw –runtime=nvidia –privileged -it DockerImageCannot access GPU from within container. Please install latest Docker and NVIDIA Container Toolkit as described by:  https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker报错Failed to connect. Is Docker runningError: connect EACCES /var/run/docker.socksudo groupadd docker          #添加docker用户组sudo gpasswd -a $USER docker  #将当前用户添加至docker用户组newgrp docker                 #更新docker用户组在终端打开vsodecodedocker  container 查看/启动/进入 \tdocker container ls --all \tdocker start apollo_dev_root\tdocker ps \tsudo docker exec -it ae76016acd18 /bin/bash\tsource /apollo/cyber/setup.bash docker groupsudo groupadd dockersudo usermod -aG docker $USERnewgrp dockerdocker images / containerdocker pulldocker run -it {name}:docker exec -it {ID} /bin/bashdocker 拷贝本地文件到容器/容器到本地文件docker cp 你的文件路径 容器长ID/name:docker容器路径 # E ## ERROREVOevo_ape tum 0_odom 5_imu_pose_after_trans.txt -va -r full -p --plot_mode xy`evo_traj kitti KITTI_00_ORB.txt KITTI_00_SPTAM.txt --ref=KITTI_00_gt.txt -p --plot_mode=xzevo_rpe tum 0_odom 5_imu_pose_after_trans.txt -r full -p --plot_mode xyFGGDBgdb -q --args /apollo/bazel-bin/cyber/mainboard/mainboard -d /apollo/modules/omnisense/pose_monitor/dag/inno_pose_monitor.dag./bazel-bin/modules/omnisense/gps_info_capture/ins_posetrans_testGITgit inittouch Readme_newgit  add .git  commit -m '提交的备注信息'git  push -u origin devgit remote add origin https://github.com/你的github用户名/你的github仓库.git  git push origin mastergit pull origin master更新远程分支列表git remote update origin --prune查看所有分支git branch -a删除远程分支Chapater6git push origin --delete Chapater6删除本地分支 Chapater6git branch -d  Chapater6        //at your own branch    git add &lt;change&gt;    git commit -m \"***\"    // checkout to destieny branch    git checkout autonoumous_driving    git pull    // back to own branch    git checkout ad_posemonitor    git merge autonoumous_driving    // fix conflict in vscode    git commit -m \"***\"    git push从bitbucket下载：ssh-add ~/keygit clone -b dev git@bitbucket.org:ivusw/omnisense.gitgit pull\" 来更新您的本地分支git reset HEAD &lt;文件&gt;...\" 以取消暂存git stash  暂存git pull   将远程存储库中的更改合并到当前分支中。 ---------- # HIINNOVUSIONfalcon-ros://改ipv4:10.42.0.91http://10.42.0.91:8675/config.pyhtml//驱动版本是否匹配？/关网页点云//不匹配：~/falcon-lidar-sdk/build$ ./download-sdk-release.py ros-melodic-innovusion-driver-release-2.5.0-rc260-public.debsudo dpkg -l | grep innosudo dpkg -r ros-melodic-innovusion-driver-public //卸载旧驱动sudo dpkg -i  ros-melodic-innovusion-driver-release-2.5.0-rc260-public.debroslaunch innovusion_pointcloud innovusion_points.launch device_ip:=10.42.0.91rosbag record /ivpoints   -o /home/xng/data/name.bag//bag2pcdrosrun pcl_ros bag_to_pcd &lt;input_file.bag&gt; &lt;topic&gt; &lt;output_directory&gt; # JKLMNOPpython        # os.path.dirname (file)返回的是.py文件的目录        # os.path.abspath (file)返回的是.py文件的绝对路径        os.path.dirname(os.path.abspath(__file__))        import os        print('***获取当前目录***')        print(\"当前目录是:{}\".format(os.getcwd()))        print(\"当前目录是:{}\".format(os.path.abspath(os.path.dirname(__file__))))        print('***获取上级目录***')        print(\"上级目录是:{}\".format(os.path.abspath(os.path.dirname(os.path.dirname(__file__)))))        print(\"上级目录是:{}\".format(os.path.abspath(os.path.dirname(os.getcwd()))))        print(\"上级目录是:{}\".format(os.path.abspath(os.path.join(os.getcwd(), \"..\"))))        print('***获取上上级目录***')        print(\"上上级目录是:{}\".format(os.path.abspath(os.path.join(os.getcwd(), \"../..\"))))        //拼接文件路径        sys.path.append()QRROSfixed frame transrosrun tf static_transform_publisher 0.0 0.0 0.0 0.0 0.0.0 base_link innovusion 100Rosbag to pcd/txt:rosrun pcl_ros bag_to_pcd &lt;input_file.bag&gt; &lt;topic&gt; &lt;output_directory&gt;rosbag play XXX.bagrosrun pcl_ros pointcloud_to_pcd input:=/velodyne_points  rosbag topic to txt:rostopic echo -b filename.bag -p /topic &gt; txtname.txt查看frame_idrostopic echo /topic | grep frame_id -------------- # STtorch  numpy2torch / torch2numpytor_datas = torch.from_numpy(data)tor2numpy=tor_arr.numpy(UVWXYZ"
+  },
+  
+  {
+    "title": "The Dictionary",
+    "url": "/posts/The-Dictionary/",
+    "categories": "",
+    "tags": "",
+    "date": "2022-12-06 00:00:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "",
+    "content": ""
+  },
+  
+  {
+    "title": "Motion Compensation",
+    "url": "/posts/Motion-Compensation/",
+    "categories": "",
+    "tags": "",
+    "date": "2022-10-19 00:00:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "",
+    "content": ""
+  },
+  
+  {
+    "title": "Imu Error Analysis",
+    "url": "/posts/IMU-Error-Analysis/",
+    "categories": "",
+    "tags": "",
+    "date": "2022-08-26 00:00:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "  1. 信号误差组成          1) 量化噪声      2) 角度随机游走      3) 角速率随机游走      4) 零偏不稳定性噪声      5) 速率斜坡      6) 零偏重复性        2. 信号误差分析— Allan方差  3. IMU内参          1）零偏误差：      2）刻度系数误差：      3）安装误差：        4. 内参...",
+    "content": "  1. 信号误差组成          1) 量化噪声      2) 角度随机游走      3) 角速率随机游走      4) 零偏不稳定性噪声      5) 速率斜坡      6) 零偏重复性        2. 信号误差分析— Allan方差  3. IMU内参          1）零偏误差：      2）刻度系数误差：      3）安装误差：        4. 内参标定          4.1 需要转台：      4.2 无需外部辅助：        5. 温度补偿1. 信号误差组成1) 量化噪声一切量化操作所固有的噪声,是数字传感器必然出现的噪声;产生原因: 通过AD采集把连续时间信号采集成离散信号的过程中,精度会损失,精度损失的大小和AD转换的步长有关,步长越小,量化噪声越小。2) 角度随机游走宽带角速率白噪声:陀螺输出角速率是含噪声的,该噪声中的白噪声成分;产生原因:计算姿态的本质是对角速率做积分,这必然会对噪声也做了积分。白噪声的积分并不是白噪声,而是一个马尔可夫过程,即当前时刻的误差是在上一时刻误差的基础上累加一个随机白噪声得到的。角度误差中所含的马尔可夫性质的误差,称为角度随机游走。3) 角速率随机游走与角度随机游走类似,角速率误差中所含的马尔可夫性质的误差,称为角速率随机游走。而这个马尔可夫性质的误差是由宽带角加速率白噪声累积的结果。4) 零偏不稳定性噪声零偏:即常说的bias,一般不是一个固定参数,而是在一定范围内缓慢随机飘移。零偏不稳定性:零偏随时间缓慢变化,其变化值无法预估,需要假定一个概率区间描述它有多大的可能性落在这个区间内。时间越长,区间越大。5) 速率斜坡该误差是趋势性误差,而不是随机误差。随机误差,是指你无法用确定性模型去拟合并消除它,最多只能用概率模型去描述它,这样得到的预测结果也是概率性质的。趋势性误差,是可以直接拟合消除的,在陀螺里产生这种误差最常见的原因是温度引起零位变化,可以通过温补来消除。6) 零偏重复性多次启动时,零偏不相等,因此会有一个重复性误差。在实际使用中,需要每次上电都重新估计一次。Allan方差分析时,不包含对零偏重复性的分析。2. 信号误差分析— Allan方差在惯性器件随机误差分析中,以上提到的5种误差相互独立,且值不同,因此若绘制“时间间隔-方差双对数曲线”(时间间隔是频率的倒数,方差是功率谱的积分), 则得到的曲线斜率必不相同。根据曲线斜率识别出各项误差,并计算出对应的误差强度。求曲线与T=1的交点，求得Q、N、K、B、R。使用：角度随机游走,在融合时作为陀螺仪的噪声使用。(有时也以零偏不稳定性当做噪声)2.角速度随机游走,作为陀螺仪微分项中的噪声其他误差项,仅起到了解器件精度水平的作用;实际融合时,Allan分析的结果,只是作为初值使用,需要在此基础上调参。3. IMU内参1）零偏误差：陀螺仪或加速度计输出中的常值偏移,即常说的 bias。2）刻度系数误差：器件的输出往往为脉冲值或模数转换得到的值,需要乘以一个刻度系数才能转换成角速度或加速度值,若该系数不准,便存在刻度系数误差。3）安装误差：如图所示,b坐标系是正交的imu坐标系,g坐标系的三个轴是分别对应三个陀螺仪。由于加工工艺原因,陀螺仪的三个轴并不正交,而且和b坐标系的轴不重合,二者之间的偏差即为安装误差。陀螺仪的输出:加速度计的输出：4. 内参标定4.1 需要转台：精度高,成本高4.2 无需外部辅助：精度差,成本低、效率高，对一般MEMS已足够https://github.com/Kyle-ak/imu_tk[ A  Robust  and  Easy  to  Implement  Method  for  IMU  Calibration  withoutExternal  Equipments ] 5. 温度补偿B：IMU bias, T：温度，delt_T：变温率，f：未知模型。通常："
+  },
+  
+  {
+    "title": "Lidar Imu Extrinsic Calibration Experiment",
+    "url": "/posts/Lidar-IMU-Extrinsic-Calibration-Experiment/",
+    "categories": "",
+    "tags": "",
+    "date": "2022-08-14 00:00:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "  1. Usage          1.1 Data Collect Procedure      1.2 Precision Indicators                  1.2.1 RPE: relative pose error          1.2.2 ATE: absolute trajectory error                    1.3 in ...",
+    "content": "  1. Usage          1.1 Data Collect Procedure      1.2 Precision Indicators                  1.2.1 RPE: relative pose error          1.2.2 ATE: absolute trajectory error                    1.3 in \\&amp; out        2. Calibration Result          2.0 Extrinsic Matrix      2.1 Calib Data:(0655)                  2.1.1 Traj          2.1.2 XYZ          2.1.3 RPY          2.1.4 APE          2.1.5 RPE                    2.2 Valid Data:(0657)                  2.2.1 Traj          2.2.2 XYZ          2.2.3 RPY          2.2.4 APE          2.2.5 RPE                    2.3 Valid Data:(large sacle)                  2.3.1 Traj          2.3.2 XYZ          2.3.3 RPY          2.3.4 APE          2.3.5 RPE                    2.4 Valid Data:(7_left_turn_speed_25)                  2.4.1 Traj          2.4.2 XYZ          2.4.3 RPY          2.4.4 APE          2.4.5 RPE                    2.5 Valid Data:(8_right_turn_speed_20)                  2.5.1 Traj          2.5.2 XYZ          2.5.3 RPY          2.5.4 APE          2.5.5 RPE                    2.6 Valid Data:(9_right_turn_speed_40)                  2.6.1 Traj          2.6.2 XYZ          2.6.3 RPY          2.6.4 APE          2.6.5 RPE                    2.7 Valid Data:(10_right_turn_speed_40)                  2.7.1 Traj          2.7.2 XYZ          2.7.3 RPY          2.7.4 APE          2.7.5 RPE                    1. Usage1.1 Data Collect ProcedureMore than three motions in different positions and orientations are required, so that the equation is full rank and can be solved linearly.      Therefore, the algorithm requires the trajectory needs to contain translations and rotations(like vehicle to travel in the shape of figure 8, as shown in Figure down below).        The point cloud and GNSS+INS data of the trajectory need to be recorded simultaneously.        There should be rich features in the experimental environment, like buildings, and less moving objects, like moving vehicle, which will affect the result of Lidar odometry.        Do not test in an environment surrounded by tall buildings, this will affect the accuracy of GNSS.        Could record more than one sets of data for verification if necessary.  1.2 Precision Indicators  estimate pose:    reference pose:  1.2.1 RPE: relative pose error  i frame RPE:  1.2.2 ATE: absolute trajectory error1.3 in &amp; outInput:// PointCloudpcl::PointCloud&lt;pointXYZ&gt; point_in;// IMU posestd::vector&lt;Eigen::Matrix4d&gt; IMU_pose;// PointCloud timestampsstd::vector&lt;double&gt; timestamps;Output://Extrinsic Matrix: Eigen::Matrix4d calibratedTransformation;/*|  R T  ||_ 0 1 _|*/2. Calibration Result2.0 Extrinsic Matrix[[0.9996387536200673, -0.01085860442221318, 0.02458562529040346, -1.697536587497878],[-0.01096721316998588, -0.9999306683289505, 0.004287046827647254, -0.007142523421813133],[0.02453736938227735, -0.004555133940977415, -0.99968853562426, -1.502642065472676],[0, 0, 0, 1]]2.1 Calib Data:(0655)2.1.1 Traj2.1.2 XYZ2.1.3 RPY2.1.4 APEmax\t0.307479mean\t0.123667median\t0.122317min\t0.009096rmse\t0.133519sse\t19.217960std\t0.0503382.1.5 RPEmax\t0.125233mean\t0.031746median\t0.027947min\t0.002622rmse\t0.038173sse\t1.569387std\t0.0211982.2 Valid Data:(0657)2.2.1 Traj2.2.2 XYZ2.2.3 RPY2.2.4 APEmax\t0.352818mean\t0.108570median\t0.095848min\t0.006885rmse\t0.127275sse\t13.347926std\t0.0664192.2.5 RPEmax\t0.183633mean\t0.029524median\t0.026837min\t0.001288rmse\t0.034410sse\t0.974481std\t0.0176752.3 Valid Data:(large sacle)2.3.1 Traj2.3.2 XYZ2.3.3 RPY2.3.4 APEmax\t2.925505mean\t0.959726median\t0.750311min\t0.205600rmse\t1.168728sse\t4457.011678std\t0.6669712.3.5 RPEmax\t0.372968mean\t0.095626median\t0.073501min\t0.001336rmse\t0.127043sse\t52.648051std\t0.0836392.4 Valid Data:(7_left_turn_speed_25)2.4.1 Traj2.4.2 XYZ2.4.3 RPY2.4.4 APEmax\t0.906424mean\t0.433745median\t0.458177min\t0.032235rmse\t0.482597sse\t44.483811std\t0.2115762.4.5 RPEmax\t0.122539mean\t0.059356median\t0.059501min\t0.006692rmse\t0.065355sse\t0.811532std\t0.0273502.5 Valid Data:(8_right_turn_speed_20)2.5.1 Traj2.5.2 XYZ2.5.3 RPY2.5.4 APEmax\t3.209363mean\t0.748066median\t0.543427min\t0.010104rmse\t1.007491sse\t163.421082std\t0.6748602.5.5 RPEmax\t1.053835mean\t0.117616median\t0.071761min\t0.011882rmse\t0.194937sse\t6.080060std\t0.1554572.6 Valid Data:(9_right_turn_speed_40)2.6.1 Traj2.6.2 XYZ2.6.3 RPY2.6.4 APEmax\t1.115413mean\t0.527681median\t0.531853min\t0.126005rmse\t0.557352sse\t31.685443std\t0.1794292.6.5 RPEmax\t0.443761mean\t0.118309median\t0.098930min\t0.012560rmse\t0.149402sse\t2.254411std\t0.0912352.7 Valid Data:(10_right_turn_speed_40)2.7.1 Traj2.7.2 XYZ2.7.3 RPY2.7.4 APEmax\t1.584476mean\t0.527325median\t0.449033min\t0.076434rmse\t0.602559sse\t52.646241std\t0.2915572.7.5 RPEmax\t1.256550mean\t0.229395median\t0.141439min\t0.008515rmse\t0.368821sse\t19.588214std\t0.288803"
+  },
+  
+  {
+    "title": "Lidar Imu Extrinsic Calibration Overview",
+    "url": "/posts/Lidar-IMU-Extrinsic-Calibration-Overview/",
+    "categories": "",
+    "tags": "",
+    "date": "2022-07-22 00:00:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "  1. Overall Structure  2. Hand-Eye Caliration Method  3. Solve AX = XB  4. Dual Quaternion  5. Related Page1. Overall Structure2. Hand-Eye Caliration Method  Mainly based on hand-eye calibration m...",
+    "content": "  1. Overall Structure  2. Hand-Eye Caliration Method  3. Solve AX = XB  4. Dual Quaternion  5. Related Page1. Overall Structure2. Hand-Eye Caliration Method  Mainly based on hand-eye calibration method  The extrinsic matrix is from IMU axis to Lidar axis.  Lidar_pose = Extrinsic * IMU_pose * Extrinsic.inverse()3. Solve AX = XBThe function performs the Hand-Eye calibration using various methods.      One approach consists in estimating the rotation then the translation (separable solutions).        Separable solutions solving separately damages the integrity of the kinematics problem and leads to coupling errors in the calculation of rotation and translation.    R. Tsai, R. Lenz A New Technique for Fully Autonomous and Efficient 3D Robotics Hand/EyeCalibration  F. Park, B. Martin Robot Sensor Calibration: Solving AX = XB on the Euclidean Group  R. Horaud, F. Dornaika Hand-Eye Calibration      Another approach consists in estimating simultaneously the rotation and the translation (simultaneous solutions).        Simultaneous solutions handle rotation and translation simultaneously and describes pose transformation in a unified manner, reducing complexity and improving calibration accuracy.    N. Andreff, R. Horaud, B. Espiau On-line Hand-Eye Calibration  K. Daniilidis Hand-Eye Calibration Using Dual QuaternionsIn this program, we use K. Daniilidis’s Dual Quaternions method to solve AX=XB problem.4. Dual Quaternion  dual number:  dual quaternion:point b to point a :use quaternion:  pa = q * pb * q̄A line in space with direction la through a point pa to a line in space with direction lb through a point pb: la = q * lb * q̄Hand-Eye Transformation with Unit Dual Quaternions:ǎ denote the screw of a camera motion, and b̌  denote the screw of the hand motion.Multiplying on the right with q.Let a = (0, a) and a’ = (0, a’), as well as b = (0, b), b’ = (0, b’).SVD:results:v7, v8 is the last two right-singular vectors  compare to two-steps method(Tsai method) and nonlinear method:   Behavior of the dual quaternion (DUAL), the nonlinear (NLIN), and the two-step (SEPA) algorithms with variation in noise. The RMS rotation error is shown on the left; the RMS relative translation error is on the right.The RMS error in rotation (left) and the RMS relative error in translation (right) as a function of the number of hand and camera motions.5. Related Page  module designhttps://docs.opencv.org/4.x/d9/d0c/group__calib3d.html#gaebfc1c9f7434196a374c382abf43439b  past calibration resulthttps://printeger.github.io/2022/08/14/Lidar-IMU-Extrinsic-Calibration-Experiment.html"
+  },
+  
+  {
+    "title": "3d Pointcloud Classification Network Experiment",
+    "url": "/posts/3D-Pointcloud-Classification-Network-Experiment/",
+    "categories": "",
+    "tags": "",
+    "date": "2022-05-19 00:00:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "  1. data format          dataset (shujutang):      our_data        2. Experiment on our_data          PAConv                  1. train:          2. test:          3. .t7 to .onnx                  ...",
+    "content": "  1. data format          dataset (shujutang):      our_data        2. Experiment on our_data          PAConv                  1. train:          2. test:          3. .t7 to .onnx                    DGCNN                  Train \\&amp; Test：          pytorch -&gt; onnx:          onnx → ncnn          Q \\&amp; A          ncnn model          Results                    PointHop++      View-GCN      squeezent                  Q \\&amp; A：                      PCD → 二维 → 轮廓图像 ？          open3d      1. data formatdataset (shujutang):      label(1 * 12):          - 00000.txt:        obj_id  truncation  occlusion  abnormal  rotation_y  heading  cen.x  cen.y  cen.z  l  w  h              velodyne:            - 00000.bin:   loc.x  loc.y  loc.z  intensity      lenetres net 18mobile net 123our_data      pcd_data_train*.hdf5(3 * 600)        - label:     0(ped)  1(bike)  2(car)   - data:         ped_*.pcd  bike_*.pcd  car_*.pcd            pcd_data_test*.hdf5(3 * 400)        - label:     0(ped)  1(bike)  2(car)   - data:         ped_*.pcd  bike_*.pcd  car_*.pcd      2. Experiment on our_dataPAConv  modelnet40 1024points * 20      inno 10000 points * 30        inno 5000 points * 30    inno 1024 points * 30  训练集中模型形状完整，无truck分类，制作训练集1. train:epoch:350, batch size: 16, test batch size: 82. test:GPU: tnum_points: 1024, test_batch_size: 16, time cost per pcd(1024 points): 0.007853929 sCPU: tnum_points: 1024, test_batch_size: 16, time cost per pcd(1024 points): 0.007833333 s3. .t7 to .onnx  Q1: 生成.onnx： Missing key(s) in state_dictRuntimeError: Error(s) in loading state_dict for PAConv: Missing key(s) in state_dict: \"matrice1\", \"matrice2\", \"matrice3”……Unexpected key(s) in state_dict: \"module.matrice1\", \"module.matrice2\", \"module.matrice3\"……原因：gpu训练网络参数保存通常是module..作为键，而CPU上带匹配键是model..，这时就要改过来，出现missing。解决方法：将字典键值中的module.替换掉model.load_state_dict({k.replace('module.', ''): v for k, v in torch.load(model_path).items()})https://blog.csdn.net/Mr_WHITE2/article/details/108955177#:~:text=Missing%20key%20%28s%29%20in%20state_dict%20%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%EF%BC%9A%20%20,name%20%3D%20%27module.%27%2Bk%20%23%20add%20%60module.%60…%20%E5%9C%A8%E8%AE%AD%E7%BB%83%E7%9A%84%E6%97%B6%E5%80%99%EF%BC%8C%E4%BD%BF%E7%94%A8%E4%BA%86%E5%8D%95%E6%9C%BA%E5%A4%9A%E5%8D%A1%EF%BC%8Cload%20%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%97%B6%E5%80%99%E5%87%BA%E7%8E%B0%E4%BA%86%E9%97%AE%E9%A2%98%EF%BC%8C%E6%90%9C%E7%B4%A2%E4%B9%8B%E5%90%8E%E5%8F%91%E7%8E%B0%EF%BC%8C%E6%98%AF%E5%9B%A0%E4%B8%BA%E5%8D%95%E6%9C%BA%E5%A4%9A%E5%8D%A1%E7%9A%84%E5%8E%9F%E5%9B%A0%E3%80%82  Q2：ONNX export failed: Couldn’t export Python operator AssignScoreWithK不支持Custom Operator，需自行导入onnx中https://pytorch.org/tutorials/advanced/torch_script_custom_ops.htmlDGCNNTrain &amp; Test：  GPU:  CPU:pytorch -&gt; onnx:onnx → ncnn  ncnn模型结构：https://github.com/Tencent/ncnn/wiki/param-and-model-file-structureSimplif onnx model:pip install onnx-simplifierpython -m onnxsim test.onnx gdcnn_simplif.onnxonnx-simplifier  无法完全去除TopK not supported yet!  # axis=-1Gather not supported yet!  # axis=0Expand not supported yet!Tile not supported yet!TopK not supported yet!  # axis=-1Gather not supported yet!  # axis=0Expand not supported yet!Tile not supported yet!TopK not supported yet!  # axis=-1Gather not supported yet!  # axis=0Expand not supported yet!Tile not supported yet!TopK not supported yet!  # axis=-1Gather not supported yet!  # axis=0Expand not supported yet!Tile not supported yet!https://github.com/Tencent/ncnn/issues/1358Q &amp; A  Q1: 直接使用含有不完全简化的ncnn模型：layer XYZ not exists or registered  A1：.param中直接删除不支持的层。需要修改.param中的layer count，blobs。报错：param is too pld, please regenerate  A2：将不支持op设为noophttps://github.com/Tencent/ncnn/wiki/FAQ-ncnn-throw-error在load model前添加：class Noop : public ncnn::Layer {};DEFINE_LAYER_CREATOR(Noop)net.register_custom_layer(\"TopK\", Noop_layer_creator);net.register_custom_layer(\"Gather\", Noop_layer_creator);  A3: onnx2ncnn.cpp中将未定义op跳过  A4：自定义ophttps://github.com/Tencent/ncnn/wiki/add-custom-layer.zh#%E5%AE%9A%E4%B9%89%E6%BA%90%E7%A0%81h%E6%96%87%E4%BB%B6srclayerrelu6h直接从pytorch → ncnnhttps://github.com/starimeL/PytorchConverterpointnet无topk，重新训练  导出成功~ncnn modelResults  Result: 1 PCD 1024 points  RESULT: 1061 PCD 1024 points car    pointnet-opt-fp16pointnet_train_2-opt-fp16  RESULT: 144 PCD 1024 points bikePointHop++30ms / pcd  Q1：KNN, 模型无法转化为onnxView-GCN输入：模型多视图图片（12）。能否使用pcd得到？squeezentncnn model &amp; onnx simplifed &amp; innx originQ &amp; A：      转ncnn后测试结果不正常？TODO: 在原网络中效果？得分计算方式？        ncnn中计时函数应选择#include &lt;sys/time.h&gt;        图片分类网络计时是否有问题？        重新训练点云网络128/1024，gpu/cpu准确率时间        转ncnn后准确率下降？        caffe点云分类网络  PCD → 二维 → 轮廓图像 ？open3dhttps://github.com/isl-org/Open3D/issues/1912open3d 批量导出侧视图：  如何自动关闭窗口？DONE"
+  },
+  
+  {
+    "title": "3d Pointcloud Classification",
+    "url": "/posts/3D-Pointcloud-Classification/",
+    "categories": "",
+    "tags": "",
+    "date": "2022-03-29 00:00:00 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "  3D Point Cloud          3D shape classification      3D object detection and tracking                  1. Region Proposal-based :                          multi-view based: 慢              segment...",
+    "content": "  3D Point Cloud          3D shape classification      3D object detection and tracking                  1. Region Proposal-based :                          multi-view based: 慢              segmentation-based：STD（F）/PointPainting/PointRGCN              frustum-based : F-ConvNet                                2. Single Shot Methods :                          BEV-based              Discretization-based : 3DBN/SA-SSD/              Point-based Methods : 3DSSD              other ： LaserNet/Lasernet++                                          3D point cloud segmentation      Grid-GCNN      LDG CNN      PointWeb      pointconv      PAConv      PointView-GCN      3D Point Cloud3D shape classification 3D object detection and tracking 3D point cloud segmentation## 3D shape classificationPointNet3D object detection and tracking1. Region Proposal-based :  提出几个可能的包含对象的区域，然后提取区域特征以确定每个提议的类别标签。multi-view based: 慢      从 BEV 图生成一组高度准确的 3D 候选框，并将它们投影到多个视图的特征图（例如，LiDAR 前视图图像、RGB 图像）。然后他们结合来自不同视图的这些区域特征来预测定向的 3D 边界框.        RT3D使用了预 RoI 池化卷积来提高MV3D 的效率。具体来说，他们将大部分卷积操作移到了 RoI 池化模块之前。因此，对所有对象建议执行一次 RoI 卷积。实验结果表明，该方法可以以 11.1 fps 的速度运行，比 MV3D 快 5 倍。  segmentation-based：STD（F）/PointPainting/PointRGCN  语义分割技术去除大部分背景点，在前景点上生成大量高质量的提议以节省计算量，如图 8(b) 所示。与multi-view based相比，这些方法实现了更高的对象召回率，更适用于具有高度遮挡和拥挤对象的复杂场景。    frustum-based : F-ConvNet    leverage existing 2D object detectors to generate 2D candidate regions of objects and then extract a 3D frustum proposal for each 2D candidate region. 受到 2D object detectors的限制。2. Single Shot Methods :  directly predict class probabilities and regress 3D bounding boxes of objects using a single-stage network. They do not need region proposal generation and post-processing.  fast    BEV-based  Discretization-based : 3DBN/SA-SSD/  convert a point cloud into a regular discrete representation, and then apply CNN to predict both categories and 3D boxes of objects.Point-based Methods : 3DSSD  直接以原始点云为输入other ： LaserNet/Lasernet++3D point cloud segmentationGrid-GCNNLDG CNNPointWeb  detection  acc not goodpointconv1000 points&lt;9.9msPAConvbatch size = 16 0.118s / batch7ms / 1w pointsacc : 0.935981PointView-GCN"
+  }
+  
+]
+

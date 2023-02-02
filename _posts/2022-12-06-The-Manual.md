@@ -270,14 +270,26 @@ git branch -d  Chapater6
 # P
 ## python
 
-```
-        // os.path.dirname (file)返回的是.py文件的目录
-        // os.path.abspath (file)返回的是.py文件的绝对路径
+```python
+        # os.path.dirname (file)返回的是.py文件的目录
+        # os.path.abspath (file)返回的是.py文件的绝对路径
         os.path.dirname(os.path.abspath(__file__))
-        
+        import os
+
+        print('***获取当前目录***')
+        print("当前目录是:{}".format(os.getcwd()))
+        print("当前目录是:{}".format(os.path.abspath(os.path.dirname(__file__))))
+        print('***获取上级目录***')
+        print("上级目录是:{}".format(os.path.abspath(os.path.dirname(os.path.dirname(__file__)))))
+        print("上级目录是:{}".format(os.path.abspath(os.path.dirname(os.getcwd()))))
+        print("上级目录是:{}".format(os.path.abspath(os.path.join(os.getcwd(), ".."))))
+        print('***获取上上级目录***')
+        print("上上级目录是:{}".format(os.path.abspath(os.path.join(os.getcwd(), "../.."))))
         //拼接文件路径
         sys.path.append()
 ```
+
+
 # Q
 
 # R

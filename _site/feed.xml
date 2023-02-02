@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>printeger</title>
   <subtitle>A minimal, responsive, and powerful Jekyll theme for presenting professional writing.</subtitle>
-  <updated>2023-02-02T13:24:39+08:00</updated>
+  <updated>2023-02-02T14:23:45+08:00</updated>
   <author>
     <name>your_full_name</name>
     <uri>http://localhost:4000/</uri>
@@ -22,17 +22,19 @@
   <entry>
     <title>The Manual</title>
     <link href="http://localhost:4000/posts/The-Manual/" rel="alternate" type="text/html" title="The Manual" />
-    <published>2022-12-06T00:00:00+08:00</published>
+    <published>2022-12-06T12:00:00+08:00</published>
   
-    <updated>2023-02-02T13:13:46+08:00</updated>
+    <updated>2023-02-02T14:19:10+08:00</updated>
   
     <id>http://localhost:4000/posts/The-Manual/</id>
     <content src="http://localhost:4000/posts/The-Manual/" />
     <author>
-      <name>your_full_name</name>
+      <name>printeger</name>
     </author>
 
   
+    
+    <category term="Lookup" />
     
   
 
@@ -86,17 +88,19 @@
   <entry>
     <title>The Dictionary</title>
     <link href="http://localhost:4000/posts/The-Dictionary/" rel="alternate" type="text/html" title="The Dictionary" />
-    <published>2022-12-06T00:00:00+08:00</published>
+    <published>2022-12-06T12:00:00+08:00</published>
   
-    <updated>2023-02-02T13:13:46+08:00</updated>
+    <updated>2023-02-02T14:19:10+08:00</updated>
   
     <id>http://localhost:4000/posts/The-Dictionary/</id>
     <content src="http://localhost:4000/posts/The-Dictionary/" />
     <author>
-      <name>your_full_name</name>
+      <name>printeger</name>
     </author>
 
   
+    
+    <category term="Lookup" />
     
   
 
@@ -119,17 +123,21 @@
   <entry>
     <title>Motion Compensation</title>
     <link href="http://localhost:4000/posts/Motion-Compensation/" rel="alternate" type="text/html" title="Motion Compensation" />
-    <published>2022-10-19T00:00:00+08:00</published>
+    <published>2022-10-19T12:00:00+08:00</published>
   
-    <updated>2023-02-02T13:13:46+08:00</updated>
+    <updated>2023-02-02T14:19:10+08:00</updated>
   
     <id>http://localhost:4000/posts/Motion-Compensation/</id>
     <content src="http://localhost:4000/posts/Motion-Compensation/" />
     <author>
-      <name>your_full_name</name>
+      <name>printeger</name>
     </author>
 
   
+    
+    <category term="Project" />
+    
+    <category term="SLAM" />
     
   
 
@@ -150,19 +158,23 @@
 
   
   <entry>
-    <title>Imu Error Analysis</title>
-    <link href="http://localhost:4000/posts/IMU-Error-Analysis/" rel="alternate" type="text/html" title="Imu Error Analysis" />
-    <published>2022-08-26T00:00:00+08:00</published>
+    <title>IMU Error Analysis</title>
+    <link href="http://localhost:4000/posts/IMU-Error-Analysis/" rel="alternate" type="text/html" title="IMU Error Analysis" />
+    <published>2022-08-26T12:00:00+08:00</published>
   
-    <updated>2023-02-02T13:13:46+08:00</updated>
+    <updated>2023-02-02T14:19:10+08:00</updated>
   
     <id>http://localhost:4000/posts/IMU-Error-Analysis/</id>
     <content src="http://localhost:4000/posts/IMU-Error-Analysis/" />
     <author>
-      <name>your_full_name</name>
+      <name>printeger</name>
     </author>
 
   
+    
+    <category term="Project" />
+    
+    <category term="Sensor" />
     
   
 
@@ -218,19 +230,23 @@
 
   
   <entry>
-    <title>Lidar Imu Extrinsic Calibration Experiment</title>
-    <link href="http://localhost:4000/posts/Lidar-IMU-Extrinsic-Calibration-Experiment/" rel="alternate" type="text/html" title="Lidar Imu Extrinsic Calibration Experiment" />
-    <published>2022-08-14T00:00:00+08:00</published>
+    <title>Lidar IMU Extrinsic Calibration Experiment</title>
+    <link href="http://localhost:4000/posts/Lidar-IMU-Extrinsic-Calibration-Experiment/" rel="alternate" type="text/html" title="Lidar IMU Extrinsic Calibration Experiment" />
+    <published>2022-08-14T12:00:00+08:00</published>
   
-    <updated>2023-02-02T13:13:46+08:00</updated>
+    <updated>2023-02-02T14:19:10+08:00</updated>
   
     <id>http://localhost:4000/posts/Lidar-IMU-Extrinsic-Calibration-Experiment/</id>
     <content src="http://localhost:4000/posts/Lidar-IMU-Extrinsic-Calibration-Experiment/" />
     <author>
-      <name>your_full_name</name>
+      <name>printeger</name>
     </author>
 
   
+    
+    <category term="Project" />
+    
+    <category term="Calibration" />
     
   
 

@@ -3,9 +3,9 @@
   {
     "title": "The Manual",
     "url": "/posts/The-Manual/",
-    "categories": "",
-    "tags": "",
-    "date": "2022-12-06 00:00:00 +0800",
+    "categories": "Lookup",
+    "tags": "Dict",
+    "date": "2022-12-06 12:00:00 +0800",
     
 
 
@@ -20,9 +20,9 @@
   {
     "title": "The Dictionary",
     "url": "/posts/The-Dictionary/",
-    "categories": "",
-    "tags": "",
-    "date": "2022-12-06 00:00:00 +0800",
+    "categories": "Lookup",
+    "tags": "Dict",
+    "date": "2022-12-06 12:00:00 +0800",
     
 
 
@@ -37,9 +37,9 @@
   {
     "title": "Motion Compensation",
     "url": "/posts/Motion-Compensation/",
-    "categories": "",
-    "tags": "",
-    "date": "2022-10-19 00:00:00 +0800",
+    "categories": "Project, SLAM",
+    "tags": "SLAM, LiDAR",
+    "date": "2022-10-19 12:00:00 +0800",
     
 
 
@@ -52,11 +52,11 @@
   },
   
   {
-    "title": "Imu Error Analysis",
+    "title": "IMU Error Analysis",
     "url": "/posts/IMU-Error-Analysis/",
-    "categories": "",
-    "tags": "",
-    "date": "2022-08-26 00:00:00 +0800",
+    "categories": "Project, Sensor",
+    "tags": "IMU, Sensor",
+    "date": "2022-08-26 12:00:00 +0800",
     
 
 
@@ -69,11 +69,11 @@
   },
   
   {
-    "title": "Lidar Imu Extrinsic Calibration Experiment",
+    "title": "Lidar IMU Extrinsic Calibration Experiment",
     "url": "/posts/Lidar-IMU-Extrinsic-Calibration-Experiment/",
-    "categories": "",
-    "tags": "",
-    "date": "2022-08-14 00:00:00 +0800",
+    "categories": "Project, Calibration",
+    "tags": "LiDAR, IMU, Sensor, Calibration, Experiment, SLAM",
+    "date": "2022-08-14 12:00:00 +0800",
     
 
 
@@ -86,11 +86,11 @@
   },
   
   {
-    "title": "Lidar Imu Extrinsic Calibration Overview",
+    "title": "Lidar IMU Extrinsic Calibration Overview",
     "url": "/posts/Lidar-IMU-Extrinsic-Calibration-Overview/",
-    "categories": "",
-    "tags": "",
-    "date": "2022-07-22 00:00:00 +0800",
+    "categories": "Project, Calibration",
+    "tags": "LiDAR, IMU, Sensor, Calibration, Overview, SLAM",
+    "date": "2022-07-22 12:00:00 +0800",
     
 
 
@@ -103,11 +103,11 @@
   },
   
   {
-    "title": "3d Pointcloud Classification Network Experiment",
+    "title": "3D Pointcloud Classification Network Experiment",
     "url": "/posts/3D-Pointcloud-Classification-Network-Experiment/",
-    "categories": "",
-    "tags": "",
-    "date": "2022-05-19 00:00:00 +0800",
+    "categories": "Project, Classification",
+    "tags": "LiDAR, DeepLearning, Classification, DeepLearning, Experiment",
+    "date": "2022-05-19 12:00:00 +0800",
     
 
 
@@ -120,11 +120,11 @@
   },
   
   {
-    "title": "3d Pointcloud Classification",
-    "url": "/posts/3D-Pointcloud-Classification/",
-    "categories": "",
-    "tags": "",
-    "date": "2022-03-29 00:00:00 +0800",
+    "title": "3D Pointcloud Classification Network Survey",
+    "url": "/posts/3D-Pointcloud-Classification-Network-Survey/",
+    "categories": "Project, Classification",
+    "tags": "LiDAR, DeepLearning, Classification, DeepLearning, Overview",
+    "date": "2022-03-29 12:00:00 +0800",
     
 
 

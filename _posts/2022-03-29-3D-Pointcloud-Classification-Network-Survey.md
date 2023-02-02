@@ -1,3 +1,12 @@
+---
+title: 3D Pointcloud Classification Network Survey
+author: printeger
+date: 2022-03-29 12:00:00 +0800
+categories: [Classification]
+tags: [LiDAR, DeepLearning, Classification, DeepLearning, Overview]
+math: true
+mermaid: true
+---
 - [3D Point Cloud](#3d-point-cloud)
   - [3D shape classification](#3d-shape-classification)
   - [3D object detection and tracking](#3d-object-detection-and-tracking)

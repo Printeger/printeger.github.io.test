@@ -1,3 +1,12 @@
+---
+title: IMU Error Analysis
+author: printeger
+date: 2022-08-26 11:33:00 +0800
+categories: [Sensor]
+tags: [IMU, Sensor]
+math: true
+mermaid: true
+---
 - [1. 信号误差组成](#1-信号误差组成)
   - [1) 量化噪声](#1-量化噪声)
   - [2) 角度随机游走](#2-角度随机游走)

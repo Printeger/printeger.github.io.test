@@ -1,3 +1,12 @@
+---
+title: Lidar IMU Extrinsic Calibration Experiment
+author: printeger
+date: 2022-08-14 12:00:00 +0800
+categories: [Calibration]
+tags: [LiDAR, IMU, Sensor, Calibration, Experiment, SLAM]
+math: true
+mermaid: true
+---
 - [1. Usage](#1-usage)
   - [1.1 Data Collect Procedure](#11-data-collect-procedure)
   - [1.2 Precision Indicators](#12-precision-indicators)

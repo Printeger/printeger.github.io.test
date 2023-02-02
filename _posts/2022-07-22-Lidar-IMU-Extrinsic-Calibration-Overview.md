@@ -1,3 +1,12 @@
+---
+title: 2022-07-22-Lidar-IMU-Extrinsic-Calibration-Overview
+author: printeger
+date: 2022-07-22 12:00:00 +0800
+categories: [Calibration]
+tags: [LiDAR, IMU, Sensor, Calibration, Overview, SLAM]
+math: true
+mermaid: true
+---
 - [1. Overall Structure](#1-overall-structure)
 - [2. Hand-Eye Caliration Method](#2-hand-eye-caliration-method)
 - [3. Solve AX = XB](#3-solve-ax--xb)

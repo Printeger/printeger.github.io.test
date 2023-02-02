@@ -81,7 +81,7 @@ theme_mode:   # [light|dark]
 img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar: '/_post/pic/avater.jpg'
+avatar: 'https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/avater.jpeg'
 
 # boolean type, the global switch for ToC in posts.
 toc: true

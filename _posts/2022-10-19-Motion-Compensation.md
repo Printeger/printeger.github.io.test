@@ -110,14 +110,15 @@ LEGO LOAM中把一帧分为6份应该也是分段线性的思想），分段线�
 
 ## 3.4 FAST LIO
 ```c++
+/*
 基于IMU预测对Lidar点云去畸变
 输入：
   待补偿的第k帧点云:PC_k，
   这一帧点云时刻之前和之后最近的两帧IMU测量head & tail:
   head->rot; head->vel; head->pos; tail->acc; tail->gyr;
   Lidar坐标系到IMU坐标系的旋转与平移变换：R_LI，T_LI
-    
-流程：
+*/
+// 流程：
   for(point pi in PC_k)
   {
     dt = pi->timestamp - head->timestamp;  //
@@ -137,11 +138,12 @@ LEGO LOAM中把一帧分为6份应该也是分段线性的思想），分段线�
 该算法每次都累计若干个imu，对应一帧lidar数据。
 为了对这一帧的lidar点进行运动补偿，需要计算出这一帧时间内，旋转了多少。
 ```c++
+/*
 输入：
     待补偿点云帧PC和起始时间与末尾时间
     这一时刻IMU测量的运动(使用李群表示)：Sophus::SE3d Tbe
-    
-流程：
+*/
+// 流程：
     for (point pi in PC_k)
     {
       //取出旋转和平移
@@ -161,12 +163,13 @@ LEGO LOAM中把一帧分为6份应该也是分段线性的思想），分段线�
 ```
 ## 3.6 Apollo
 ```c++
+/*
 输入：
     待补偿点云帧PC，该帧点云起始时间PC_beg, 该帧点云末尾时间：PC_end
     点云起始时刻之前最近一帧IMU状态t_beg, q_beg
     点云末尾时刻之后最近一帧IMU状态t_end, q_end(平移+旋转（四元数）)。
-    
-流程：
+*/
+// 流程：
     Quaterniond q_0 = (0, 0, 0, 1);
     Quaterniond q_1 = q_end.inv() * q_beg;
     double theta = acos(abs(q0.dot(q1)));
@@ -208,68 +211,74 @@ LEGO LOAM中把一帧分为6份应该也是分段线性的思想），分段线�
 
 
 # 4. 补偿效果对比：
+> work flow
 
 ![](pic/8/9.png)
 ![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/8/9.png)
 
-
-
-
-
-
-
 ## 4.1 一般点云数据
 
-原始点云：
+### 4.1.1 原始点云：
 
 ![](pic/8/111.gif)
 ![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/8/111.gif)
 
-| 原始点云 | 运动补偿后  |
-|:--------:| :---------:|
-| ![](pic/8/111.gif)
-![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/8/111.gif) | ![](pic/8/222.gif)
-![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/8/222.gif) |
+### 4.1.2 运动补偿后：
 
-运动补偿后：
-
-
-
-
+![](pic/8/222.gif)
+![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/8/222.gif)
 
 ## 4.2 带ROI区域的点云数据
 
-原点云
+### 4.2.1 原始点云:
 
+![](pic/8/333.gif)
+![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/8/333.gif)
 
+### 4.2.2 运动补偿后：
 
-使用去畸变后的带有ROI区域的点云进行位姿估计会有抖动，表现在yaw角和水平方向抖动。
+> 使用去畸变后的带有ROI区域的点云进行位姿估计会有抖动，表现在yaw角和水平方向抖动。
 
+![](pic/8/444.gif)
+![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/8/444.gif)
 
+![](pic/8/10.png)
+![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/8/10.png)
 
+![](pic/8/11.png)
+![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/8/11.png)
 
+> 使用未去畸变的带ROI区域的点云的直接进行位姿估计，使用估计的位姿补偿点云效果正常。
 
-使用未去畸变的带ROI区域的点云的直接进行位姿估计，使用估计的位姿补偿点云效果正常。
+![](pic/8/555.gif)
+![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/8/555.gif)
 
+![](pic/8/12.png)
+![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/8/12.png)
 
-
-
+![](pic/8/13.png)
+![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/8/13.png)
 
 ## 4.3 使用里程计补偿与IMU数据补偿对比
+| case0 | case 1 | case 2 | case 3 |
+|:-----:|:-----:|:-----:|:-----:|
+| IMU pose traj(As benchmark) | Lidar Odometry | Lidar Odometry with motion compensation(use lidar pose) | Lidar Odometry with motion compensation(use IMU pose)|
 
-case 0 IMU pose traj(As benchmark) 
-
-case 1  Lidar Odometry
-
-case 2  Lidar Odometry with motion compensation(use lidar pose)
-
-case 3  Lidar Odometry with motion compensation(use IMU pose)
-
-MOTION COMPENSATION TIME COST：10～11ms
+    MOTION COMPENSATION TIME COST：10～11ms
 
 1. Traj Compare
 
+![Desktop View](pic/8/14.png){: width="972" height="589" .w-75 .normal}
+_123_
 
+![](pic/8/14.png)
+![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/8/14.png)
+
+![](pic/8/15.png)
+![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/8/15.png)
+
+![](pic/8/16.png)
+![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/8/16.png)
 
 2. APE/RPE Compare
 

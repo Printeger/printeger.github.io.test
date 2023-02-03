@@ -18,13 +18,13 @@ mermaid: true
 
 ## 1.1 平移带来的畸变
 
-
+![](pic/8/1.png)
+![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/8/1.png)
 
 ## 1.2 旋转带来的畸变
 
-| Column 1 | Column 2  |	Column 3 |
-|:--------| :---------:|--------:|
-| centered 文本居左 | right-aligned 文本居中 |right-aligned 文本居右|
+![](pic/8/2.png)
+![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/8/2.png)
 
 
 
@@ -34,23 +34,28 @@ mermaid: true
 >
 > 1）获得目标运动信息，点云中各个点的2）采样时间，通过匀速运动假设。对每个点做3）变换。
 
-
+![](pic/8/3.png)
+![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/8/3.png)
 
 假设一帧点云中,起始时刻雷达的位姿为
 
-
+![](pic/8/4.png)
+![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/8/4.png)
 
 第k帧点云中第i时刻的点的位姿可以通过匀速运动假设通过插值得到：
 
-
+![](pic/8/5.png)
+![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/8/5.png)
 
 第i个激光点的坐标为:
 
-
+![](pic/8/6.png)
+![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/8/6.png)
 
 第i个激光点补偿畸变后的坐标应该为
 
-
+![](pic/8/7.png)
+![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/8/7.png)
 
 
 
@@ -62,7 +67,8 @@ mermaid: true
 
 ICP与VICP
 
-
+![](pic/8/8.png)
+![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/8/8.png)
 
 
 
@@ -203,7 +209,8 @@ LEGO LOAM中把一帧分为6份应该也是分段线性的思想），分段线�
 
 # 4. 补偿效果对比：
 
-
+![](pic/8/9.png)
+![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/8/9.png)
 
 
 
@@ -215,9 +222,14 @@ LEGO LOAM中把一帧分为6份应该也是分段线性的思想），分段线�
 
 原始点云：
 
+![](pic/8/0001.gif)
+![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/8/0001.gif)
 
-
-
+| Column 1 | Column 2  |
+|:--------| :---------:|
+| ![](pic/8/test1.gif)
+![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/8/0001.gif) | ![](pic/8/test2.gif)
+![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/8/0001.gif) |
 
 运动补偿后：
 

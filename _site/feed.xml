@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>printeger</title>
   <subtitle>A minimal, responsive, and powerful Jekyll theme for presenting professional writing.</subtitle>
-  <updated>2023-02-02T16:28:13+08:00</updated>
+  <updated>2023-02-03T10:23:41+08:00</updated>
   <author>
     <name>printeger</name>
     <uri>http://localhost:4000/</uri>
@@ -125,7 +125,7 @@
     <link href="http://localhost:4000/posts/Motion-Compensation/" rel="alternate" type="text/html" title="Motion Compensation" />
     <published>2022-10-19T12:00:00+08:00</published>
   
-    <updated>2023-02-02T14:19:10+08:00</updated>
+    <updated>2023-02-03T10:21:58+08:00</updated>
   
     <id>http://localhost:4000/posts/Motion-Compensation/</id>
     <content src="http://localhost:4000/posts/Motion-Compensation/" />
@@ -149,8 +149,52 @@
 
 
 
-      
+      1. 运动畸变
 
+原因：
+
+激光点云非瞬时得到；
+
+点云频率较低，自身运动不能忽略
+
+1.1 平移带来的畸变
+
+1.2 旋转带来的畸变
+
+
+  
+    
+      Column 1
+      Column 2
+      Column 3
+    
+  
+  
+    
+      centered 文本居左
+      right-aligned 文本居中
+      right-aligned 文本居右
+    
+  
+
+
+2. 畸变去除方法
+
+
+  总体思路：
+
+  1）获得目标运动信息，点云中各个点的2）采样时间，通过匀速运动假设。对每个点做3）变换。
+
+
+假设一帧点云中,起始时刻雷达的位姿为
+
+第k帧点云中第i时刻的点的位姿可以通过匀速运动假设通过插值得到：
+
+第i个激光点的坐标为:
+
+第i个激光点补偿畸变后的坐标应该为
+
+由于激光采集的点云并不是在同一时刻采集的，所...
     </summary>
   
 

@@ -268,11 +268,8 @@ LEGO LOAM中把一帧分为6份应该也是分段线性的思想），分段线�
 
 1. Traj Compare
 
-![Desktop View](pic/8/14.png){: width="972" height="589" .w-75 .normal}
-_123_
-
 ![](pic/8/14.png)
-![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/8/14.png)
+![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/8/14.png){: width="972" height="589" }
 
 ![](pic/8/15.png)
 ![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/8/15.png)
@@ -280,13 +277,13 @@ _123_
 ![](pic/8/16.png)
 ![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/8/16.png)
 
-2. APE/RPE Compare
+1. APE/RPE Compare
 
-case 1  Lidar Odometry
+_case 1  Lidar Odometry_
 
-case 2  Lidar Odometry with motion compensation(use lidar pose)
+_case 2  Lidar Odometry with motion compensation(use lidar pose)_
 
-case 3  Lidar Odometry with motion compensation(use IMU pose)
+_case 3  Lidar Odometry with motion compensation(use IMU pose)_
 
 APE
 

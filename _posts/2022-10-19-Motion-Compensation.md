@@ -269,7 +269,7 @@ LEGO LOAM中把一帧分为6份应该也是分段线性的思想），分段线�
 1. Traj Compare
 
 ![](pic/8/14.png)
-![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/8/14.png){: width="972" height="589" }
+![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/8/14.png)
 
 ![](pic/8/15.png)
 ![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/8/15.png)

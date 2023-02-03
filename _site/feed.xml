@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>printeger</title>
   <subtitle>A minimal, responsive, and powerful Jekyll theme for presenting professional writing.</subtitle>
-  <updated>2023-02-03T10:31:33+08:00</updated>
+  <updated>2023-02-03T10:47:56+08:00</updated>
   <author>
     <name>printeger</name>
     <uri>http://localhost:4000/</uri>
@@ -125,7 +125,7 @@
     <link href="http://localhost:4000/posts/Motion-Compensation/" rel="alternate" type="text/html" title="Motion Compensation" />
     <published>2022-10-19T12:00:00+08:00</published>
   
-    <updated>2023-02-03T10:23:48+08:00</updated>
+    <updated>2023-02-03T10:47:52+08:00</updated>
   
     <id>http://localhost:4000/posts/Motion-Compensation/</id>
     <content src="http://localhost:4000/posts/Motion-Compensation/" />
@@ -200,12 +200,12 @@
 
 由于激光采集的点云并不是在同一时刻采集的，所以就会存在运动畸变（坐标系不同引起的），所以需要根据接收激光点的时间计算位姿把点云投影到同一坐标系。为了补偿每次扫描的时间和位姿不同，
 
-
-
-
 2.1 基于位姿估计
 
 ICP与VICP
+
+
+
 
 VICP
 

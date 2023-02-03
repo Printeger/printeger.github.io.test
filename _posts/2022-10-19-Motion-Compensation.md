@@ -228,8 +228,8 @@ LEGO LOAM中把一帧分为6份应该也是分段线性的思想），分段线�
 | Column 1 | Column 2  |
 |:--------| :---------:|
 | ![](pic/8/test1.gif)
-![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/8/0001.gif) | ![](pic/8/test2.gif)
-![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/8/0001.gif) |
+![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/8/test1.gif) | ![](pic/8/test2.gif)
+![](https://github.com/Printeger/printeger.github.io/raw/main/_posts/pic/8/test2.gif) |
 
 运动补偿后：
 
